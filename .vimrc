@@ -51,7 +51,6 @@ set hlsearch            " highlight all matches
 
 " Leader shortcuts {{{
 let mapleader = " "
-nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>w :mksession<CR>
 nnoremap <leader>W :mksession!<CR>
 nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
@@ -71,7 +70,7 @@ nnoremap k gk
 " move to beginning/end of line
 nnoremap B ^
 nnoremap E $
-" $/^ doesn't do anything
+" ... and this is the only way to do that
 nnoremap $ <nop>
 nnoremap ^ <nop>
 nnoremap gV `[v`]
@@ -81,28 +80,12 @@ map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 " }}}
 
-" CtrlP {{{
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|target/|\.(o|swp|pyc|egg)$'
-" }}}
-
 " Backups {{{
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
-" }}}
-
-" airline {{{
-" set laststatus=2
-" let g:airline_theme = 'zenburn'
-" let g:airline_left_sep = ''
-" let g:airline_left_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_sep = ''
 " }}}
 
 " Misc {{{
@@ -115,10 +98,4 @@ nnoremap o ox<Backspace>
 nnoremap O Ox<Backspace>
 
 set clipboard=unnamed
-" }}}
-
-" Command-T {{{
-let g:CommandTAcceptSelectionMap = '<C-t>'
-let g:CommandTAcceptSelectionTabMap = '<CR>'
-let g:CommandTCancelMap = '<Esc>'
 " }}}

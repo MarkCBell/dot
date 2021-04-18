@@ -1,8 +1,4 @@
 
-execute pathogen#infect()
-filetype plugin indent off
-syntax on
-
 augroup reload_vimrc " {
 	autocmd!
 	autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -36,8 +32,11 @@ inoremap <S-Tab> <C-d>
 " }}}
 
 " Tabbing {{{
+set hidden
 set showtabline=2
 set tabpagemax=100  " I love tabs.
+nnoremap ( :bn<Return>
+nnoremap ) :bp<Return>
 " }}}
 
 " Spelling {{{
@@ -55,12 +54,15 @@ let mapleader = " "
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>w :mksession<CR>
 nnoremap <leader>W :mksession!<CR>
+nnoremap <leader>d oimport pdb; pdb.set_trace()<ESC>
+nnoremap <leader>/ :noh<CR>
+nnoremap <leader>b :ls<CR>:b<Space>
 vnoremap <leader>y "+y
 nmap <leader>s :set spell!<CR>
 nmap <leader>p :set paste!<CR>
 nmap <leader>1 :! pdflatex main.tex<CR>
 nmap <leader>2 :! bibtex main.aux<CR>
-nmap <leader>0 :! open main.pdf<CR>
+nmap <leader>0 :! xdg-open main.pdf<CR>
 " }}}
 
 " Line Shortcuts {{{
@@ -73,6 +75,10 @@ nnoremap E $
 nnoremap $ <nop>
 nnoremap ^ <nop>
 nnoremap gV `[v`]
+
+" move among buffers with CTRL
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
 " }}}
 
 " CtrlP {{{
@@ -116,4 +122,3 @@ let g:CommandTAcceptSelectionMap = '<C-t>'
 let g:CommandTAcceptSelectionTabMap = '<CR>'
 let g:CommandTCancelMap = '<Esc>'
 " }}}
-

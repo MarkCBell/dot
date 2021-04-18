@@ -1,6 +1,8 @@
-
+# Ignore everything
 *
 
+# except ...
 !.bash_aliases
-!.vimrc
+!.gitconfig
 !.gitignore
+!.vimrc

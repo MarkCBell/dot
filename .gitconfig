@@ -1,0 +1,8 @@
+[alias]
+	lr = log --oneline --graph
+	la = log --oneline --graph --all
+[user]
+	name = Mark Bell
+	email = mark00bell@googlemail.com
+[core]
+	editor = vim
